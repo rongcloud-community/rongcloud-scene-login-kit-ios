@@ -1,0 +1,26 @@
+//
+//  RCSLoginPrefixHeader.pch
+//  RCSceneLoginKit
+//
+//  Created by 彭蕾 on 2022/6/6.
+//
+
+#ifndef RCSLoginPrefixHeader_pch
+#define RCSLoginPrefixHeader_pch
+
+// third party
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <YYModel/YYModel.h>
+#import <Masonry/Masonry.h>
+
+// RCS Kit
+#import "RCSBaseKit.h"
+#import "RCSWebKit.h"
+
+#import "RCSLoginConstants.h"
+#import "RCSLoginConfig.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* RCSLoginPrefixHeader_pch */
