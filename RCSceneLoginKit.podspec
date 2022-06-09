@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '彭蕾' => 'penglei1@rongcloud.cn' }
-  s.source           = { :git => 'https://github.com/rongcloud-community/rongclound-scene-login-kit-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rongcloud-community/rongcloud-scene-login-kit-ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
 
