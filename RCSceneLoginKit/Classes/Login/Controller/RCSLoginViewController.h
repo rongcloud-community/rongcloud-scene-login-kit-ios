@@ -13,7 +13,6 @@ typedef void(^RCSLoginSuccessCompletion)(RCSUserInfo *userInfo);
 @interface RCSLoginViewController : UIViewController
 
 @property (nonatomic, strong) RCSLoginSuccessCompletion successCompletion;
-- (void)showIn:(UIViewController *)controller;
 
 @end
 

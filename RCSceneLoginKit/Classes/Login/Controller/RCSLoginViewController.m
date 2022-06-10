@@ -33,6 +33,10 @@
     [self buildLayout];
 }
 
+- (void)dealloc {
+    
+}
+
 - (void)buildLayout {
     self.view.backgroundColor = [UIColor whiteColor];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
@@ -73,13 +77,6 @@
 
 - (void)tapView:(UITapGestureRecognizer *)tap {
     [self.view endEditing:YES];
-}
-
-#pragma mark - public method
-- (void)showIn:(UIViewController *)controller {
-    self.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [controller presentViewController:self animated:YES completion:nil];
 }
 
 #pragma mark - RCSPhoneViewDelegate
@@ -145,14 +142,8 @@
         }
         // 成功
         [SVProgressHUD dismiss];
-        [self handlerLoginSuccess:userInfo];
+        !self.successCompletion ?: self.successCompletion(userInfo);
     }];
-}
-
-- (void)handlerLoginSuccess:(RCSUserInfo *)userInfo {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    !self.successCompletion ?: self.successCompletion(userInfo);
-    [[NSNotificationCenter defaultCenter] postNotificationName:kRCSNotificationNameLogin object:nil];
 }
 
 #pragma mark - lazy load

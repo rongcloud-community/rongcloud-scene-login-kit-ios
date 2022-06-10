@@ -29,10 +29,15 @@
 
 - (IBAction)toLogin:(id)sender {
     RCSLoginViewController *loginVC = [RCSLoginViewController new];
+    __weak __typeof__(loginVC) weakLoginVC = loginVC;
     loginVC.successCompletion = ^(RCSUserInfo * _Nonnull userInfo) {
+        __strong __typeof__(weakLoginVC) strongLoginVC = weakLoginVC;
         self.loginSuccessLabel.text = userInfo.description;
+        [strongLoginVC dismissViewControllerAnimated:YES completion:nil];
     };
-    [loginVC showIn:self];
+    loginVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    loginVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 
