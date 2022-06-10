@@ -20,13 +20,7 @@
     request.responseModelClassName = urlConfig.rspClassName;
     request.httpMethod = urlConfig.method;
     request.requestHeaders = urlConfig.headers;
-    [request startWithSuccessBlock:^(RCSRequest * _Nonnull request, id  _Nullable responseObject) {
-        Class targetCls = NSClassFromString(request.responseModelClassName);
-        request.responseObject = [self parseDataFromJson:responseObject targetClass:targetCls];
-        
-    } failBlock:^(RCSRequest * _Nonnull request, id  _Nullable responseObject) {
-        
-    }];
+
     [request startWithSuccessBlock:^(RCSRequest * _Nonnull request, id  _Nullable responseObject) {
         Class targetCls = NSClassFromString(request.responseModelClassName);
         RCSResponseModel *model = [self parseDataFromJson:responseObject targetClass:targetCls];
