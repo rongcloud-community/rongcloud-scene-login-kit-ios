@@ -12,6 +12,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <YYModel/YYModel.h>
 #import <Masonry/Masonry.h>
+#import <RCSceneBaseKit/RCSBaseKit.h>
 
 // RCS Kit
 #import "RCSBaseKit.h"

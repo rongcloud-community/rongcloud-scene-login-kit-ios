@@ -6,6 +6,7 @@
 //
 
 #import "RCSUserInfo.h"
+#import <YYModel/YYModel.h>
 
 @implementation RCSUserInfo
 

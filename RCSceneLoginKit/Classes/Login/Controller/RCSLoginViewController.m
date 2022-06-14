@@ -9,8 +9,7 @@
 #import "RCSPhoneView.h"
 #import "RCSVerifyCodeView.h"
 #import "RCSPrivacyView.h"
-#import <SafariServices/SafariServices.h>
-#import "RCSWebViewController.h"
+#import <RCSceneWebKit/RCSWebKit.h>
 #import "RCSCountryCodeViewController.h"
 #import "RCSLoginPresenter.h"
 

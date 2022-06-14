@@ -27,29 +27,9 @@ TODO: Add long description of the pod here.
   s.author           = { '彭蕾' => 'penglei1@rongcloud.cn' }
   s.source           = { :git => 'git@github.com:rongcloud-community/rongcloud-scene-login-kit-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'RCSceneLoginKit/Classes/*.h'
-    
-  s.subspec 'Common' do |ss|
-    ss.source_files = 'RCSceneLoginKit/Classes/Common/**/*'
-  end
-
-  s.subspec 'CountryCode' do |ss|
-    ss.source_files = 'RCSceneLoginKit/Classes/CountryCode/**/*'
-  end
-
-  s.subspec 'Login' do |ss|
-    ss.source_files = 'RCSceneLoginKit/Classes/Login/**/*'
-  end
-  
-  s.subspec 'Network' do |ss|
-    ss.source_files = 'RCSceneLoginKit/Classes/Network/**/*'
-  end
-  
-  s.subspec 'RCSWebKit' do |ss|
-    ss.source_files = 'RCSceneLoginKit/Classes/RCSWebKit/**/*'
-  end
+  s.source_files = 'RCSceneLoginKit/Classes/**/*'
   
    s.resource_bundles = {
      'RCSceneLoginKit' => ['RCSceneLoginKit/Assets/**/*']
@@ -57,11 +37,12 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking'
   s.dependency 'Masonry'
   s.dependency 'YYModel'
   s.dependency 'SVProgressHUD'
   s.dependency 'RCSceneBaseKit'
+  s.dependency 'RCSceneNetworkKit'
+  s.dependency 'RCSceneWebKit'
   
   s.prefix_header_file = 'RCSceneLoginKit/Classes/Common/RCSLoginPrefixHeader.pch'
   

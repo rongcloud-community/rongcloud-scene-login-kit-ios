@@ -21,8 +21,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    [RCSLoginConfig configWithBaseUrl:<#(nonnull NSString *)#>
-                       bussinessToken:<#(nonnull NSString *)#>
+    [RCSLoginConfig configWithBaseUrl:@""
+                       bussinessToken:@""
                             isOverSea:NO];
     
 }
