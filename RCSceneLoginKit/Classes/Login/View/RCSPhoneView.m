@@ -47,6 +47,10 @@
         [self.countrySelctedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(RCSReSize(20));
         }];
+        
+        self.countryCodeLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectCountry)];
+        [self.countryCodeLabel addGestureRecognizer:tap];
     }
     
     [self.stackView addArrangedSubview:self.phoneTextField];
@@ -105,9 +109,6 @@
         _countryCodeLabel.textAlignment = NSTextAlignmentRight;
         _countryCodeLabel.text = @"+86";
         [_countryCodeLabel sizeToFit];
-        _countryCodeLabel.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectCountry)];
-        [_countryCodeLabel addGestureRecognizer:tap];
     }
     return _countryCodeLabel;
 }
