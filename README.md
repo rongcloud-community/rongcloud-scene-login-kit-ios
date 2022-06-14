@@ -11,6 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+
 ## Installation
 
 RCSceneLoginKit is available through [CocoaPods](https://cocoapods.org). To install
@@ -18,6 +19,28 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'RCSceneLoginKit'
+```
+
+## Usage
+
+```Objective-c
+    // 配置baseUrl 和 bussinessToken
+    [RCSLoginConfig configWithBaseUrl:@""
+                       bussinessToken:@""
+                            isOverSea:NO];
+                            
+    // 跳转登录页
+        RCSLoginViewController *loginVC = [RCSLoginViewController new];
+    __weak __typeof__(loginVC) weakLoginVC = loginVC;
+    // 设置登录成功的回调
+    loginVC.successCompletion = ^(RCSUserInfo * _Nonnull userInfo) {
+        __strong __typeof__(weakLoginVC) strongLoginVC = weakLoginVC;
+        self.loginSuccessLabel.text = userInfo.description;
+        [strongLoginVC dismissViewControllerAnimated:YES completion:nil];
+    };
+    loginVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    loginVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:loginVC animated:YES completion:nil];
 ```
 
 ## Author
