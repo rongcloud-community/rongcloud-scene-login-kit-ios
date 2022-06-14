@@ -24,7 +24,8 @@
         self.layer.borderWidth = 1.0;
         self.layer.borderColor = [UIColor rcs_colorWithHex:0xD4D7D9].CGColor;
         self.layer.cornerRadius = 4;
-        
+        self.stackView.userInteractionEnabled = YES;
+
         [self buildLayout];
     }
     return self;
@@ -104,6 +105,9 @@
         _countryCodeLabel.textAlignment = NSTextAlignmentRight;
         _countryCodeLabel.text = @"+86";
         [_countryCodeLabel sizeToFit];
+        _countryCodeLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectCountry)];
+        [_countryCodeLabel addGestureRecognizer:tap];
     }
     return _countryCodeLabel;
 }

@@ -84,10 +84,10 @@
     self.requestCodeBtn.hidden = YES;
         
     WeakSelf(self);
-    [self.countdown startCountDownWithTime:60 countDownCallBack:^(int timeStr) {
+    [self.countdown startCountdownWithTime:60 countdownCallBack:^(int timeStr) {
         StrongSelf(weakSelf);
         strongSelf.countdownLabel.text = [NSString stringWithFormat:@"已发送(%ds)",timeStr];
-    } countDownFinishCallBack:^{
+    } countdownFinishCallBack:^{
         StrongSelf(weakSelf);
         strongSelf.countdownLabel.hidden = YES;
         strongSelf.requestCodeBtn.hidden = NO;

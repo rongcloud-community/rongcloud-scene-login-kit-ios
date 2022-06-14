@@ -51,6 +51,8 @@ __attribute__((unused)) static NSString * _deviceID() {
             userInfo.phone = phone;
             !completion ?: completion(userInfo);
         } else {
+            // 失败
+            [SVProgressHUD showSuccessWithStatus:model.msg ?: @"登录失败"];
             !completion ?: completion(nil);
         }
         

@@ -29,7 +29,27 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'RCSceneLoginKit/Classes/**/*'
+  s.source_files = 'RCSceneLoginKit/Classes/*.h'
+    
+  s.subspec 'Common' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/Common/**/*'
+  end
+
+  s.subspec 'CountryCode' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/CountryCode/**/*'
+  end
+
+  s.subspec 'Login' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/Login/**/*'
+  end
+  
+  s.subspec 'Network' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/Network/**/*'
+  end
+  
+  s.subspec 'RCSWebKit' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/RCSWebKit/**/*'
+  end
   
    s.resource_bundles = {
      'RCSceneLoginKit' => ['RCSceneLoginKit/Assets/**/*']
@@ -41,6 +61,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Masonry'
   s.dependency 'YYModel'
   s.dependency 'SVProgressHUD'
+  s.dependency 'RCSceneBaseKit'
   
   s.prefix_header_file = 'RCSceneLoginKit/Classes/Common/RCSLoginPrefixHeader.pch'
   

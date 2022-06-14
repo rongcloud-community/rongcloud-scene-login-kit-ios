@@ -136,8 +136,6 @@
                               code:[self.verifyCodeView verifycode]
                         completion:^(RCSUserInfo * _Nullable userInfo) {
         if (!userInfo) {
-            // 失败
-            [SVProgressHUD showSuccessWithStatus:@"登录失败"];
             return ;
         }
         // 成功

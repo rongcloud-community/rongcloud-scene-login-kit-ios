@@ -96,9 +96,15 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *indexTitle = [self.presenter fetchIndexTitles][indexPath.section];
-    NSArray *countryList = [self.presenter fetchCountryGroup][indexTitle];
-    RCSCountryInfo *countryInfo = countryList[indexPath.row];
+    RCSCountryInfo *countryInfo;
+    if (tableView.dataSource == self.dataSource) {
+        NSString *indexTitle = [self.presenter fetchIndexTitles][indexPath.section];
+        NSArray *countryList = [self.presenter fetchCountryGroup][indexTitle];
+        countryInfo = countryList[indexPath.row];
+    } else {
+        countryInfo = self.searchDataSource.searchResult[indexPath.row];
+    }
+    
     !_selectedHandler ?: _selectedHandler(countryInfo);
     self.searchController.active = NO;
     [self back];
