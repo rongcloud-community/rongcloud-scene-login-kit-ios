@@ -18,7 +18,7 @@ RCSceneLoginKit is available through [CocoaPods](https://cocoapods.org). To inst
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RCSceneLoginKit'
+pod 'RCSceneLoginKit', '0.1.0'
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ pod 'RCSceneLoginKit'
                             isOverSea:NO];
                             
     // 跳转登录页
-        RCSLoginViewController *loginVC = [RCSLoginViewController new];
+    RCSLoginViewController *loginVC = [RCSLoginViewController new];
     __weak __typeof__(loginVC) weakLoginVC = loginVC;
     // 设置登录成功的回调
     loginVC.successCompletion = ^(RCSUserInfo * _Nonnull userInfo) {
