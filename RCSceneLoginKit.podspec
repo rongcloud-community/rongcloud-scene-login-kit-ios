@@ -29,7 +29,32 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'RCSceneLoginKit/Classes/**/*'
+  s.source_files = 'RCSceneLoginKit/Classes/*.h'
+
+  s.subspec 'Common' do |ss|
+    ss.source_files = 'RCSceneLoginKit/Classes/Common/**/*'
+  end
+
+  s.subspec 'Network' do |ss|
+    ss.dependency 'RCSceneLoginKit/Common'
+    
+    ss.source_files = 'RCSceneLoginKit/Classes/Network/**/*'
+  end
+  
+  s.subspec 'CountryCode' do |ss|
+    ss.dependency 'RCSceneLoginKit/Network'
+    ss.dependency 'RCSceneLoginKit/Common'
+    
+    ss.source_files = 'RCSceneLoginKit/Classes/CountryCode/**/*'
+  end
+  
+  s.subspec 'Login' do |ss|
+    ss.dependency 'RCSceneLoginKit/Network'
+    ss.dependency 'RCSceneLoginKit/Common'
+    ss.dependency 'RCSceneLoginKit/CountryCode'
+    
+    ss.source_files = 'RCSceneLoginKit/Classes/Login/**/*'
+  end
   
    s.resource_bundles = {
      'RCSceneLoginKit' => ['RCSceneLoginKit/Assets/**/*']
