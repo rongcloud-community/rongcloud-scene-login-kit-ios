@@ -6,6 +6,7 @@
 //
 
 #import "RCSLoginConfig.h"
+#import <RCSceneNetworkKit/RCSNetworkKit.h>
 
 @interface RCSLoginConfig ()
 @property (nonatomic, copy) NSString *baseUrl;

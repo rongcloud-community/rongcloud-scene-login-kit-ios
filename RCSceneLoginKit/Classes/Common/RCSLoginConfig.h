@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RCSLoginConfig : NSObject
 
-+ (void)configWithBaseUrl:(NSString *)baseUrl bussinessToken:(NSString *)bussinessToken isOverSea:(BOOL)isOverSea;
++ (void)configWithBaseUrl:(NSString *)baseUrl bussinessToken:(nullable NSString *)bussinessToken isOverSea:(BOOL)isOverSea;
 
 + (NSString *)baseUrl;
 + (NSString *)bussinessToken;

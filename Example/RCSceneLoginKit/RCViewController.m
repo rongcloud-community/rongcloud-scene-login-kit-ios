@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    [RCSLoginConfig configWithBaseUrl:@""
+    [RCSLoginConfig configWithBaseUrl:@"https://rcrtc-api.rongcloud.net/"
                        bussinessToken:@""
                             isOverSea:NO];
     

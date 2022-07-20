@@ -77,8 +77,6 @@
 }
 
 #pragma mark - private method
-//- (BOOL)
-
 - (NSArray<NSString *> *)firstLetterArray:(NSArray<RCSCountryInfo *> *)arr {
     NSMutableSet *set = [NSMutableSet new];
     for (RCSCountryInfo *obj in arr) {
