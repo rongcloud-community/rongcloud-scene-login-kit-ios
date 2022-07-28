@@ -11,6 +11,8 @@
 @interface RCSLoginConfig ()
 @property (nonatomic, copy) NSString *baseUrl;
 @property (nonatomic, copy) NSString *bussinessToken;
+@property (nonatomic, copy) NSString *appChannel;
+@property (nonatomic, copy) NSString *appVersion;
 @property (nonatomic, assign) BOOL isOverSea;
 @end
 
@@ -25,9 +27,19 @@
 }
 
 + (void)configWithBaseUrl:(NSString *)baseUrl bussinessToken:(NSString *)bussinessToken isOverSea:(BOOL)isOverSea {
+    [self configWithBaseUrl:baseUrl bussinessToken:bussinessToken isOverSea:isOverSea appChannel:nil appVersion:nil];
+}
+
++ (void)configWithBaseUrl:(NSString *)baseUrl
+           bussinessToken:(nullable NSString *)bussinessToken
+                isOverSea:(BOOL)isOverSea
+               appChannel:(nullable NSString *)channel
+               appVersion:(nullable NSString *)version {
     [RCSLoginConfig shared].baseUrl = baseUrl;
     [RCSLoginConfig shared].bussinessToken = bussinessToken;
     [RCSLoginConfig shared].isOverSea = isOverSea;
+    [RCSLoginConfig shared].appChannel = channel;
+    [RCSLoginConfig shared].appVersion = version;
 }
 
 + (NSString *)baseUrl {
@@ -41,4 +53,13 @@
 + (BOOL )isOverSea {
     return [RCSLoginConfig shared].isOverSea;
 }
+
++ (nullable NSString *)appChannel {
+    return [RCSLoginConfig shared].appChannel;
+}
+
++ (nullable NSString *)appVersion {
+    return [RCSLoginConfig shared].appVersion;
+}
+
 @end

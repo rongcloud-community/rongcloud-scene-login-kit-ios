@@ -11,11 +11,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RCSLoginConfig : NSObject
 
-+ (void)configWithBaseUrl:(NSString *)baseUrl bussinessToken:(nullable NSString *)bussinessToken isOverSea:(BOOL)isOverSea;
++ (void)configWithBaseUrl:(NSString *)baseUrl
+           bussinessToken:(nullable NSString *)bussinessToken
+                isOverSea:(BOOL)isOverSea;
+
++ (void)configWithBaseUrl:(NSString *)baseUrl
+           bussinessToken:(nullable NSString *)bussinessToken
+                isOverSea:(BOOL)isOverSea
+               appChannel:(nullable NSString *)channel
+               appVersion:(nullable NSString *)version;
 
 + (NSString *)baseUrl;
-+ (NSString *)bussinessToken;
 + (BOOL )isOverSea;
++ (nullable NSString *)bussinessToken;
++ (nullable NSString *)appChannel;
++ (nullable NSString *)appVersion;
 
 @end
 

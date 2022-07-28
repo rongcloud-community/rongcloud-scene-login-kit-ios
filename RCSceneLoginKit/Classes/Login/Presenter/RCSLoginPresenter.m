@@ -39,11 +39,19 @@ __attribute__((unused)) static NSString * _deviceID() {
                 region:(NSString *)region
                   code:(NSString *)code
             completion:(void (^) (RCSUserInfo * _Nullable userInfo))completion {
-    NSDictionary *params = @{ @"mobile": phone,
+    NSMutableDictionary *params = @{ @"mobile": phone,
                               @"region": region,
                               @"verifyCode": code,
                               @"deviceId": _deviceID() ,
-                              @"platform" : @"mobile"};
+                              @"platform" : @"mobile"}.mutableCopy;
+    
+    if ([RCSLoginConfig appVersion].length != 0) {
+        [params addEntriesFromDictionary:@{@"version":[RCSLoginConfig appVersion]}];
+    }
+    if ([RCSLoginConfig appChannel].length != 0) {
+        [params addEntriesFromDictionary:@{@"channel":[RCSLoginConfig appChannel]}];
+    }
+    
     [self.dataHandler loginWithParams:params
                       completionBlock:^(RCSResponseModel * _Nonnull model) {
         if (model.code == RCSResponseStatusCodeSuccess) {

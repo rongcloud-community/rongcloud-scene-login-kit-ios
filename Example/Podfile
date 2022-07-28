@@ -4,6 +4,5 @@ platform :ios, '11.0'
 
 target 'RCSceneLoginKit_Example' do
   pod 'RCSceneLoginKit', :path => '../'
-  pod 'RCSceneNetworkKit', :path => '../../RCSceneNetworkKit'
   
 end
