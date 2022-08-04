@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RCSceneLoginKit'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = '融云场景化 App RCE 登录组件【OC】'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '彭蕾' => 'penglei1@rongcloud.cn' }
-  s.source           = { :git => 'git@github.com:rongcloud-community/rongcloud-scene-login-kit-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rongcloud-community/rongcloud-scene-login-kit-ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
 
