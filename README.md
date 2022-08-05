@@ -18,7 +18,7 @@ RCSceneLoginKit is available through [CocoaPods](https://cocoapods.org). To inst
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RCSceneLoginKit', '0.1.0'
+pod 'RCSceneLoginKit'
 ```
 
 ## Usage
